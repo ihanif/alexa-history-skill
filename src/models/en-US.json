@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "history facts",
+      "invocationName": "ai history",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -21,17 +21,26 @@
         },
         {
           "name": "GetNewFactIntent",
+          "slots": [],
           "samples": [
-            "a fact",
-            "a history fact",
-            "tell me a fact",
-            "tell me a history fact",
-            "give me a fact",
-            "give me a history fact",
-            "tell me trivia"
-          ],
-          "slots": []
-        },
+              "GetNewFactIntent a fact",
+              "GetNewFactIntent tell me a fact",
+              "GetNewFactIntent give me a fact",
+              "GetNewFactIntent give me something",
+              "GetNewFactIntent get a fact",
+              "GetNewFactIntent get me an interesting fact",
+              "GetNewFactIntent get me an awesome fact",
+              "GetNewFactIntent get a new fact",
+              "GetNewFactIntent get an awesome fact",
+              "GetNewFactIntent get something fun",
+              "GetNewFactIntent get something interesting",
+              "GetNewFactIntent tell something fun",
+              "GetNewFactIntent say something fun",
+              "GetNewFactIntent say something interesting",
+              "GetNewFactIntent say interesting thing",
+              "GetNewFactIntent say new thing"
+          ]
+       },
         {
           "name": "ExampleFactIntent",
           "samples": [

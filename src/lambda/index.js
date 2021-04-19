@@ -7,7 +7,14 @@ const Alexa = require('ask-sdk');
 const facts = [
     "The field of AI is considered to have its origin in 1950, with publication of British mathematician Alan Turing's paper, Computing Machinery and Intelligence.",
     "The term, Artificial Intelligence, was coined in 1956 by mathematician and computer scientist John McCarthy, at Dartmouth College, in New Hampshire.",
-    "Example Fact #3 Placeholder"
+    "AI flourished till 1974 the difficult years that followed would later be known as an AI winter",
+    "In the 1980’s John Hopfield and David Rumelhart popularized deep learning techniques",
+    "In 1997 world chess champion and grand master Gary Kasparov was defeated by IBM’s Deep Blue",
+    "Walter Pitts and Warren McCulloch analyzed networks of idealized artificial neurons and showed how they might perform simple logical functions in 1943",
+    "In 1951 Minsky built the first neural net machine the SNARC",
+    "The second AI winter started in 1987",
+    "In 2005 a Stanford robot won the DARPA Grand Challenge by driving autonomously for 131 miles along an unrehearsed desert trail",
+    "By 2016 the market for AI-related products hardware and software reached more than 8 billion dollars"
 ];
 
 const GetNewFactHandler = {
