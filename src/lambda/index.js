@@ -40,7 +40,69 @@ const GetNewFactHandler = {
 // TODO: Create a handler for the GetNewYearFactHandler intent
 // Use the handler above as a template
 // ============================================================
+const GetNewYearFactHandler = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+      || (request.type === 'IntentRequest'
+        && request.intent.name === 'GetNewYearFactIntent');
+  },
+  handle(handlerInput) {
+    const intent = handlerInput.requestEnvelope.request.intent;
+    let returnRandomFact = false;
+    let speechOutput = null;
+    let randomFact = null;
 
+    if ((typeof intent !== 'undefined') &&
+        (typeof intent.slots !== 'undefined')&&
+        (typeof intent.slots.FACT_YEAR !== 'undefined')) {
+          const year = handlerInput.requestEnvelope.request.intent.slots.FACT_YEAR.value
+          const yearFacts = searchYearFact(facts, year)
+          if (yearFacts.length > 0) {
+            randomFact = randomPhrase(yearFacts);
+            speechOutput =  randomFact;
+          } else {
+            returnRandomFact = true;
+          }
+    } else {
+      returnRandomFact = true
+    }
+
+    if (returnRandomFact) {
+      randomFact = randomPhrase(facts);
+      speechOutput = randomFact;
+    }
+
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .withSimpleCard(SKILL_NAME, randomFact)
+      .getResponse();
+  },
+};
+
+const searchYearFact = (facts, year) => {
+  let yearsArr = [];
+  for (var i = 0; i < facts.length; i++) {
+      var yearFound = grepFourDigitNumber(facts[i], year);
+      if (yearFound != null) {
+          yearsArr.push(yearFound)
+      }
+  };
+  return yearsArr
+};
+const grepFourDigitNumber = (myString, year) => {
+  const txt = new RegExp(year);
+    if (txt.test(myString)) {
+        return myString;
+    } else {
+        return null
+    }
+};
+const randomPhrase = (phraseArr) => {
+    var i = 0;
+    i = Math.floor(Math.random() * phraseArr.length);
+    return (phraseArr[i]);
+};
 
 
 
@@ -111,6 +173,7 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     GetNewFactHandler,
     // TODO: Add the handler you create above to this list of handlers
+    GetNewYearFactHandler,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler

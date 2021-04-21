@@ -42,14 +42,27 @@
           ]
        },
         {
-          "name": "ExampleFactIntent",
+          "name": "GetNewYearFactIntent",
           "samples": [
-            "example utterance one",
-            "example utterance two"
+            "GetNewYearFactIntent give me an artificial intelligence fact from {FACT_YEAR}",
+            "GetNewYearFactIntent what can you tell me about an artificial intelligence in {FACT_YEAR}",
+            "GetNewYearFactIntent what happened in artificial intelligence in {FACT_YEAR}",
+            "GetNewYearFactIntent tell me something about an artificial intelligence fact in {FACT_YEAR}",
+            "GetNewYearFactIntent tell me some artificial intelligence information from {FACT_YEAR}",
+            "GetNewYearFactIntent tell me an artificial intelligence fact about {FACT_YEAR}",
+            "GetNewYearFactIntent give me an artificial intelligence trivia from {FACT_YEAR}",
+            "GetNewYearFactIntent tell me an artificial intelligence trivia about {FACT_YEAR}",
+            "GetNewYearFactIntent what can you give me about an artificial intelligence from {FACT_YEAR}",
+            "GetNewYearFactIntent tell me some history in artificial intelligence from {FACT_YEAR}",
+            "GetNewYearFactIntent give me some history in artificial intelligence from {FACT_YEAR}",
+            "GetNewYearFactIntent fact from an artificial intelligence in {FACT_YEAR}",
+            "GetNewYearFactIntent fact about an artificial intelligence in {FACT_YEAR}",
+            "GetNewYearFactIntent trivia about an artificial intelligence in {FACT_YEAR}",
+            "GetNewYearFactIntent what have you got for me from an artificial intelligence in {FACT_YEAR}"
           ],
           "slots": [
                 {
-                  "name": "EXAMPLE_FACT_NAME",
+                  "name": "FACT_YEAR",
                   "type": "AMAZON.FOUR_DIGIT_NUMBER"
                 }
               ]
